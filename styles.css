@@ -37,8 +37,12 @@ html {
   --font-base-body-px: 16px;
   --spacing: 1rem;
 
+  /* Bil á milli „stærri“ eininga (header, efnisbox, footer) */
+  --vertical-space: calc(var(--gutter));
+
   /* Hámarksbreidd á efni */
-  --max-width: 900px;
+  --max-width: 1400px;
+  --width-offset: calc(100% - (2 * var(--offset)));
 
   /* Border breiddir */
   --border-small: 1px;
@@ -51,15 +55,20 @@ html {
   --color-dark: #2f0505;
   --color-light: #fff9ee;
 
-  --color-primary: #f0f0f8;
-  --color-header: #fff;
-  --color-text: #000;
-  --color-border: #ccc;
+  /* Grid stillingar */
+  --columns: 12;
+  --gutter: 30px;
+  --offset: 20px;
 
   /* Letur stillingar */
   --font-base-size: 1rem;
   --font-family-base: 'Noto Sans Display', Helvetica, Arial, sans-serif;
   --font-family-heading: 'Lora', Georgia, serif;
+
+  /* Transitions */
+  --transition-time-short: 300ms;
+  --transition-time-long: 600ms;
+  --transition-timing-function: ease-in-out;
 }
 
 /* Almennt */
@@ -100,6 +109,40 @@ img {
   white-space: nowrap;
   width: 1px;
 }
+
+/* Takki */
+
+
+
+/* Kvikun */
+
+/** Útfæra kvikun á efni þegar síða opnuð **/
+
+/* Layout */
+
+/** Útfæra layout með grid **/
+
+/* Haus */
+
+/** Útfæra haus með grid **/
+
+/* Valmynd */
+
+/** Útfæra valmynd með grid **/
+
+/** Meginmál **/
+
+/** Útfæra meginmál með grid **/
+
+/** Fótur **/
+
+/** Útfæra fót með grid **/
+
+/* Box! */
+
+/** Útfæra box með grid **/
+
+/* Opnunartími */
 
 /* Layout */
 
@@ -229,11 +272,24 @@ img {
   object-position: top center;
 }
 
-.boxes .box .link {
+.link {
   margin-top: calc(var(--spacing) * 0.5);
-
+  background-color: var(--color-dark);
+  color: var(--color-light);
   font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  padding: var(--spacing);
+  margin: var(--spacing);
+  transition: var(--transition-time-short) var(--transition-timing-function);
+  text-decoration: none;
 }
+
+.link:hover {
+  background-color: var(--color-gold);
+  color: var(--color-dark);
+}
+
 
 /* Opnunartími */
 
